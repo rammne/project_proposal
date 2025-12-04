@@ -319,7 +319,7 @@ function renderSlideContent(slide: Slide) {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-6xl md:text-7xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-slate-100 to-blue-200"
+            className="text-7xl md:text-8xl font-bold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-blue-200 via-slate-100 to-blue-200"
           >
             {slide.title}
           </motion.h1>
@@ -327,7 +327,7 @@ function renderSlideContent(slide: Slide) {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-2xl md:text-3xl text-slate-400 font-light max-w-3xl"
+            className="text-3xl md:text-4xl text-slate-400 font-light max-w-4xl"
           >
             {slide.subtitle}
           </motion.p>
@@ -336,7 +336,7 @@ function renderSlideContent(slide: Slide) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="mt-12 text-slate-600 uppercase tracking-widest text-sm"
+              className="mt-12 text-slate-600 uppercase tracking-widest text-base"
             >
               {slide.footer}
             </motion.div>
@@ -358,10 +358,10 @@ function renderSlideContent(slide: Slide) {
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className="flex items-center gap-6 text-xl text-slate-300"
+                  className="flex items-center gap-6 text-2xl text-slate-300"
                 >
                   <div className="p-4 rounded-xl bg-slate-800/50 text-blue-400">
-                    <point.icon size={28} />
+                    <point.icon size={32} />
                   </div>
                   <span>{point.text}</span>
                 </motion.div>
@@ -375,10 +375,10 @@ function renderSlideContent(slide: Slide) {
                 size={64}
                 className="mx-auto text-amber-500 mb-4"
               />
-              <h3 className="text-2xl font-bold text-amber-500">
+              <h3 className="text-3xl font-bold text-amber-500">
                 Vulnerability Detected
               </h3>
-              <p className="mt-2 text-slate-500">Platform Dependency Risk</p>
+              <p className="mt-2 text-xl text-slate-500">Platform Dependency Risk</p>
             </div>
           </div>
         </div>
@@ -386,29 +386,29 @@ function renderSlideContent(slide: Slide) {
 
     case "critical":
       return (
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <div className="mb-8 px-6 py-2 rounded-full bg-red-900/20 text-red-400 border border-red-900/50 text-sm font-bold uppercase tracking-wider">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+          <div className="mb-8 px-6 py-2 rounded-full bg-red-900/20 text-red-400 border border-red-900/50 text-base font-bold uppercase tracking-wider">
             Critical Liability
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-8">{slide.title}</h2>
+          <h2 className="text-6xl md:text-7xl font-bold mb-8">{slide.title}</h2>
 
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="w-full bg-white text-slate-900 rounded-lg p-6 shadow-2xl max-w-2xl mx-auto mb-8 border-l-4 border-red-500"
+            className="w-full bg-white text-slate-900 rounded-lg p-8 shadow-2xl max-w-3xl mx-auto mb-12 border-l-4 border-red-500"
           >
             <div className="flex gap-4 items-start">
               <div className="mt-1">
-                <Search className="text-blue-600" />
+                <Search className="text-blue-600" size={24} />
               </div>
               <div className="text-left">
-                <div className="text-blue-800 text-xl font-medium hover:underline cursor-pointer">
+                <div className="text-blue-800 text-2xl font-medium hover:underline cursor-pointer">
                   OLOPSC you killed again!! : r/Marikina
                 </div>
-                <div className="text-green-700 text-sm mb-1">
+                <div className="text-green-700 text-base mb-1">
                   www.reddit.com › r › city › comments
                 </div>
-                <div className="text-slate-600 text-sm">
+                <div className="text-slate-600 text-base">
                   This OLOPSC issue regarding the death of a Senior High School
                   student is serious, it's probably high time that other things
                   happening inside that school, even ...
@@ -417,7 +417,7 @@ function renderSlideContent(slide: Slide) {
             </div>
           </motion.div>
 
-          <p className="text-2xl text-slate-400 leading-relaxed">
+          <p className="text-3xl text-slate-400 leading-relaxed">
             {slide.content.text}
           </p>
         </div>
@@ -426,7 +426,7 @@ function renderSlideContent(slide: Slide) {
     case "cards":
       return (
         <div>
-          <h2 className="text-4xl font-bold mb-12 text-center">
+          <h2 className="text-5xl font-bold mb-12 text-center">
             {slide.title}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -439,10 +439,10 @@ function renderSlideContent(slide: Slide) {
                 className="bg-slate-900/50 border border-slate-800 p-8 rounded-2xl hover:bg-slate-800/50 transition-colors"
               >
                 <div className="mb-6 text-blue-400 bg-blue-900/20 p-4 rounded-xl inline-block">
-                  <card.icon size={32} />
+                  <card.icon size={40} />
                 </div>
-                <h3 className="text-xl font-bold mb-4">{card.title}</h3>
-                <p className="text-slate-400 leading-relaxed">{card.text}</p>
+                <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
+                <p className="text-xl text-slate-400 leading-relaxed">{card.text}</p>
               </motion.div>
             ))}
           </div>
@@ -451,9 +451,9 @@ function renderSlideContent(slide: Slide) {
 
     case "diagram":
       return (
-        <div className="text-center max-w-5xl mx-auto">
+        <div className="text-center max-w-6xl mx-auto">
           <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
-          <p className="text-2xl text-blue-400 mb-24">{slide.subtitle}</p>
+          <p className="text-3xl text-blue-400 mb-24">{slide.subtitle}</p>
 
           <div className="relative py-12">
             {/* Main Node */}
@@ -505,7 +505,7 @@ function renderSlideContent(slide: Slide) {
             </svg>
           </div>
 
-          <p className="mt-24 text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="mt-24 text-2xl text-slate-400 max-w-3xl mx-auto">
             {slide.content.text}
           </p>
         </div>
@@ -516,8 +516,8 @@ function renderSlideContent(slide: Slide) {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="flex-1">
             <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
-            <p className="text-2xl text-blue-400 mb-8">{slide.subtitle}</p>
-            <p className="text-xl text-slate-300 mb-8 border-l-4 border-blue-500 pl-6 italic">
+            <p className="text-3xl text-blue-400 mb-8">{slide.subtitle}</p>
+            <p className="text-2xl text-slate-300 mb-8 border-l-4 border-blue-500 pl-6 italic">
               "{slide.content.argument}"
             </p>
           </div>
@@ -530,8 +530,8 @@ function renderSlideContent(slide: Slide) {
                 transition={{ delay: 0.3 + i * 0.1 }}
                 className="bg-slate-900 p-6 rounded-xl border border-slate-800 flex items-center justify-between"
               >
-                <span className="font-mono text-xl">{tech}</span>
-                <CheckCircle className="text-green-500" size={20} />
+                <span className="font-mono text-2xl">{tech}</span>
+                <CheckCircle className="text-green-500" size={24} />
               </motion.div>
             ))}
           </div>
@@ -541,37 +541,37 @@ function renderSlideContent(slide: Slide) {
     case "financial":
       return (
         <div className="max-w-5xl mx-auto w-full">
-          <h2 className="text-4xl font-bold mb-16 text-center">
+          <h2 className="text-5xl font-bold mb-16 text-center">
             {slide.title}
           </h2>
           <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch mb-12">
             {/* Current */}
             <div className="flex-1 bg-slate-900/30 p-8 rounded-2xl border border-red-900/30 flex flex-col items-center opacity-70">
-              <div className="text-red-400 font-bold uppercase tracking-wider mb-2">
+              <div className="text-red-400 font-bold uppercase tracking-wider mb-2 text-lg">
                 Rent (Liability)
               </div>
-              <div className="text-4xl font-bold mb-2">
+              <div className="text-5xl font-bold mb-2">
                 {slide.content.current.cost}
               </div>
-              <div className="text-slate-500">
+              <div className="text-slate-500 text-xl">
                 {slide.content.current.label}
               </div>
             </div>
 
             {/* Proposed */}
             <div className="flex-1 bg-blue-900/20 p-8 rounded-2xl border border-blue-500/50 flex flex-col items-center transform scale-110 shadow-2xl">
-              <div className="text-blue-400 font-bold uppercase tracking-wider mb-2">
+              <div className="text-blue-400 font-bold uppercase tracking-wider mb-2 text-lg">
                 Owned (Asset)
               </div>
-              <div className="text-5xl font-bold mb-2 text-white">
+              <div className="text-6xl font-bold mb-2 text-white">
                 {slide.content.proposed.cost}
               </div>
-              <div className="text-blue-200">
+              <div className="text-blue-200 text-xl">
                 {slide.content.proposed.label}
               </div>
             </div>
           </div>
-          <p className="text-center text-2xl text-green-400 font-bold">
+          <p className="text-center text-3xl text-green-400 font-bold">
             {slide.content.text}
           </p>
         </div>
@@ -580,7 +580,7 @@ function renderSlideContent(slide: Slide) {
     case "timeline":
       return (
         <div className="w-full">
-          <h2 className="text-4xl font-bold mb-16 text-center">
+          <h2 className="text-5xl font-bold mb-16 text-center">
             {slide.title}
           </h2>
           <div className="relative">
@@ -595,10 +595,10 @@ function renderSlideContent(slide: Slide) {
                   className="relative pt-12 text-center"
                 >
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-slate-950 border-4 border-blue-500 rounded-full z-10" />
-                  <div className="text-blue-400 font-bold text-lg mb-2">
+                  <div className="text-blue-400 font-bold text-xl mb-2">
                     Week {item.weeks}
                   </div>
-                  <div className="text-slate-300 text-sm font-medium px-4">
+                  <div className="text-slate-300 text-lg font-medium px-4">
                     {item.phase}
                   </div>
                 </motion.div>
@@ -612,18 +612,18 @@ function renderSlideContent(slide: Slide) {
       return (
         <div className="flex flex-col md:flex-row gap-16 items-center">
           <div className="flex-1 text-right border-r border-slate-800 pr-16">
-            <div className="text-slate-400 text-xl mb-2">
+            <div className="text-slate-400 text-2xl mb-2">
               {slide.content.note}
             </div>
             <div className="text-7xl md:text-8xl font-bold text-white mb-4">
               {slide.content.amount}
             </div>
-            <p className="text-lg text-slate-500 italic max-w-md ml-auto">
+            <p className="text-2xl text-slate-500 italic max-w-md ml-auto">
               {slide.content.narrative}
             </p>
           </div>
           <div className="flex-1">
-            <h3 className="text-2xl font-bold mb-8 text-blue-400">Includes:</h3>
+            <h3 className="text-3xl font-bold mb-8 text-blue-400">Includes:</h3>
             <ul className="space-y-4">
               {slide.content.items.map((item: string, i: number) => (
                 <motion.li
@@ -631,7 +631,7 @@ function renderSlideContent(slide: Slide) {
                   initial={{ x: 20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.4 + i * 0.1 }}
-                  className="flex items-center gap-4 text-xl"
+                  className="flex items-center gap-4 text-2xl"
                 >
                   <div className="w-2 h-2 bg-blue-500 rounded-full" />
                   {item}
@@ -649,11 +649,11 @@ function renderSlideContent(slide: Slide) {
             <Shield size={48} />
           </div>
           <h2 className="text-5xl font-bold mb-4">{slide.title}</h2>
-          <div className="text-4xl text-slate-200 font-bold mb-2">
+          <div className="text-5xl text-slate-200 font-bold mb-2">
             {slide.content.price}
           </div>
-          <div className="text-slate-500 mb-12">{slide.content.sub}</div>
-          <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          <div className="text-slate-500 mb-12 text-xl">{slide.content.sub}</div>
+          <p className="text-2xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
             {slide.content.text}
           </p>
         </div>
@@ -667,7 +667,7 @@ function renderSlideContent(slide: Slide) {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <h2 className="text-6xl md:text-8xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
+            <h2 className="text-6xl md:text-8xl font-bold mb-8 bg-clip-text text-transparent bg-linear-to-b from-white to-slate-500">
               {slide.title}
             </h2>
           </motion.div>
@@ -675,7 +675,7 @@ function renderSlideContent(slide: Slide) {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="text-2xl md:text-3xl text-blue-400 font-light max-w-3xl mx-auto"
+            className="text-3xl md:text-4xl text-blue-400 font-light max-w-3xl mx-auto"
           >
             {slide.subtitle}
           </motion.p>
@@ -683,7 +683,7 @@ function renderSlideContent(slide: Slide) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
-            className="mt-16 px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium transition-colors"
+            className="mt-16 px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium transition-colors text-lg"
             onClick={() => window.location.reload()}
           >
             Replay Presentation
